@@ -25,12 +25,12 @@ export default alt.createStore(
       if (this.status !== "ready") return;
       this.status = "processing";
 
-      getClient().then(client => {
-        client.seed(file, { announce: client.tracker.announce }, torrent => {
+      getClient().then((client) => {
+        client.seed(file, { announce: client.tracker.announce }, (torrent) => {
           const updateSpeed = () => {
             this.setState({
               speedUp: torrent.uploadSpeed,
-              peers: torrent.numPeers
+              peers: torrent.numPeers,
             });
           };
 
@@ -44,7 +44,7 @@ export default alt.createStore(
               fileName: file.name,
               fileSize: file.size,
               fileType: file.type,
-              infoHash: torrent.magnetURI
+              infoHash: torrent.magnetURI,
             },
             (res) => {
               this.setState({
@@ -54,7 +54,7 @@ export default alt.createStore(
                 fileName: file.name,
                 fileSize: file.size,
                 fileType: file.type,
-                infoHash: torrent.magnetURI
+                infoHash: torrent.magnetURI,
               });
             }
           );

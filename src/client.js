@@ -17,12 +17,12 @@ window.FilePizza = () => {
 
   if (!webrtcSupport.support) SupportActions.noSupport();
 
-  let theme = localStorage.getItem("theme")
+  let theme = localStorage.getItem("theme");
   if (theme != "") {
-    SupportActions.themeChange(theme)
+    SupportActions.themeChange(theme);
   } else {
-    let prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
-    SupportActions.themeChange(prefersDark ? "dark" : "light")
+    let prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    SupportActions.themeChange(prefersDark ? "dark" : "light");
   }
 
   let isChrome = navigator.userAgent.toLowerCase().indexOf("chrome") > -1;

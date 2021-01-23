@@ -98,5 +98,5 @@ export default [
   "walnuts",
   "watercress",
   "whitebait",
-  "zucchini"
-]
+  "zucchini",
+];

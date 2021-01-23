@@ -23,12 +23,12 @@ export default class App extends React.Component {
   }
 
   toggleTheme(e) {
-    e.preventDefault()
+    e.preventDefault();
 
     if (this.state.theme == "dark") {
-      SupportActions.themeChange("light")
+      SupportActions.themeChange("light");
     } else {
-      SupportActions.themeChange("dark")
+      SupportActions.themeChange("dark");
     }
   }
 
@@ -73,7 +73,13 @@ export default class App extends React.Component {
           </div>
           <footer className="footer">
             <p>
-              <strong>Like FilePizza?</strong> Support its development! <a href="https://commerce.coinbase.com/checkout/247b6ffe-fb4e-47a8-9a76-e6b7ef83ea22" className="donate-button">donate</a>
+              <strong>Like FilePizza?</strong> Support its development!{" "}
+              <a
+                href="https://commerce.coinbase.com/checkout/247b6ffe-fb4e-47a8-9a76-e6b7ef83ea22"
+                className="donate-button"
+              >
+                donate
+              </a>
             </p>
 
             <p className="byline">
@@ -95,12 +101,14 @@ export default class App extends React.Component {
               </a>{" "}
               &middot;{" "}
               <a href="#" onClick={this.toggleTheme.bind(this)}>
-                {this.state.theme == "dark" ? "Toggle light theme 🌝" : "Toggle dark theme 🌚"}
+                {this.state.theme == "dark"
+                  ? "Toggle light theme 🌝"
+                  : "Toggle dark theme 🌚"}
               </a>
             </p>
           </footer>
           <script>FilePizza()</script>
-          { process.env.GA_ACCESS_TOKEN ? <ga.Initializer /> : <div></div> }
+          {process.env.GA_ACCESS_TOKEN ? <ga.Initializer /> : <div></div>}
         </body>
       </html>
     );
