@@ -17,7 +17,7 @@ window.FilePizza = () => {
 
   if (!webrtcSupport.support) SupportActions.noSupport();
 
-  let theme = localStorage.getItem("theme");
+  let theme = localStorage.getItem("theme") || "dark";
   if (theme != "") {
     SupportActions.themeChange(theme);
   } else {
